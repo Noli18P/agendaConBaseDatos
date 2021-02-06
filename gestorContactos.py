@@ -18,7 +18,9 @@ def agregarContacto():
 
     pointer.executemany("INSERT INTO contactos VALUES(?,?)", informacion)
     conection.commit()
+    print('----------------------------------------------------------')
     print(f'El contacto {nombre_contacto} ha sido agregado con exito')
+    print('----------------------------------------------------------')
 
 
 def eliminarContacto():
@@ -26,6 +28,11 @@ def eliminarContacto():
 
 def verContacto():
     pass
+
+def verTodo():
+    pointer.execute("SELECT * FROM contactos")
+    lectura_contactos = pointer.fetchall()
+    print(lectura_contactos)
 
 menu = """
 Bienvenido a tu gestor de contactos, selecciona una opcion para ejecutar:
@@ -49,7 +56,7 @@ def main():
     elif seleccion == '3':
         pass
     elif seleccion == '4':
-        pass
+        verTodo()
     elif seleccion == '5':
         print('Adios')
         sys.exit()
