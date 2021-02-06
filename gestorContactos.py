@@ -43,10 +43,12 @@ def verContacto():
     contacto = input('Ingrese el nombre del contacto que desea ver: ')
     pointer.execute(f"SELECT NUMERO_CONTACTO FROM contactos WHERE NOMBRE_CONTACTO='{contacto}'")
     numero = pointer.fetchall()
+    print('------------------------------------')
     print(f'El numero de {contacto} es {numero}')
-    main()
-
+    print('------------------------------------')
     conection.commit()
+
+    main()
 
 
 def verTodo():
