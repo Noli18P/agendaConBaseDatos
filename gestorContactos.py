@@ -38,8 +38,16 @@ def eliminarContacto():
     else:
         main()
 
+
 def verContacto():
-    pass
+    contacto = input('Ingrese el nombre del contacto que desea ver: ')
+    pointer.execute(f"SELECT NUMERO_CONTACTO FROM contactos WHERE NOMBRE_CONTACTO='{contacto}'")
+    numero = pointer.fetchall()
+    print(f'El numero de {contacto} es {numero}')
+    main()
+
+    conection.commit()
+
 
 def verTodo():
     pointer.execute("SELECT * FROM contactos")
@@ -73,7 +81,7 @@ def main():
     elif seleccion == '2':
         eliminarContacto()
     elif seleccion == '3':
-        pass
+        verContacto()
     elif seleccion == '4':
         verTodo()
     elif seleccion == '5':
