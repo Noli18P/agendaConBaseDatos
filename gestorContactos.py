@@ -9,7 +9,17 @@ pointer = conection.cursor()
 
 
 def agregarContacto():
-    pass
+    nombre_contacto = input('Ingrese el nombre del contacto: ')
+    numero_contacto = int(input("Ingrese el numero del contacto: "))
+    
+    informacion = [
+                (nombre_contacto, numero_contacto)
+            ]
+
+    pointer.executemany("INSERT INTO contactos VALUES(?,?)", informacion)
+    conection.commit()
+    print(f'El contacto {nombre_contacto} ha sido agregado con exito')
+
 
 def eliminarContacto():
     pass
@@ -32,7 +42,8 @@ def main():
     seleccion = input()
 
     if seleccion == '1':
-        pass
+        agregarContacto()
+        main()
     elif seleccion == '2':
         pass
     elif seleccion == '3':
