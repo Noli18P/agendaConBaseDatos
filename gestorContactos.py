@@ -32,7 +32,14 @@ def verContacto():
 def verTodo():
     pointer.execute("SELECT * FROM contactos")
     lectura_contactos = pointer.fetchall()
-    print(lectura_contactos)
+
+    print('Tus contactos son los siguientes: ')
+    print('----------------------------------')
+    for i in lectura_contactos:
+        print(i)
+    print('----------------------------------')
+    main()
+
 
 menu = """
 Bienvenido a tu gestor de contactos, selecciona una opcion para ejecutar:
