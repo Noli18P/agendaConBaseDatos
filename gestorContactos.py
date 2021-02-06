@@ -24,7 +24,19 @@ def agregarContacto():
 
 
 def eliminarContacto():
-    pass
+    contacto = input('Ingrese el nombre del contacto que desea eliminar: ')
+
+
+    pregunta = input(f'¿Esta seguro de eliminar el contacto {contacto}? (si/no)')
+    if pregunta == 'si':
+        pointer.execute(f"DELETE FROM contactos WHERE NOMBRE_CONTACTO='{contacto}'")
+        conection.commit()
+        
+        print('--------------------------------------------------')
+        print('El contacto {contacto} ha sido eliminado con exito')
+        print('--------------------------------------------------')
+    else:
+        main()
 
 def verContacto():
     pass
@@ -59,7 +71,7 @@ def main():
         agregarContacto()
         main()
     elif seleccion == '2':
-        pass
+        eliminarContacto()
     elif seleccion == '3':
         pass
     elif seleccion == '4':
