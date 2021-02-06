@@ -1,5 +1,8 @@
 import sqlite3
 
+conection = sqlite3.connect("contactos")
+
+
 def agregarContacto():
     pass
 
@@ -11,3 +14,5 @@ def verContacto():
 
 def main():
     pass
+
+conection.close()
