@@ -29,7 +29,24 @@ Bienvenido a tu gestor de contactos, selecciona una opcion para ejecutar:
 
 def main():
     print(menu)
-    
+    seleccion = input()
+
+    if seleccion == '1':
+        pass
+    elif seleccion == '2':
+        pass
+    elif seleccion == '3':
+        pass
+    elif seleccion == '4':
+        pass
+    elif seleccion == '5':
+        print('Adios')
+        sys.exit()
+    else:
+        print('La opcion ingresada no existe')
+        main()
+
+main()
 
 
 conection.close()
